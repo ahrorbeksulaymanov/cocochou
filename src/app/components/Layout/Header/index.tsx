@@ -124,7 +124,7 @@ const Header: React.FC = () => {
               <Logo />
             </div>
             <div className='flex items-center gap-2'>
-              <LanguageSwitcher />
+              {/* <LanguageSwitcher /> */}
               <button
                 onClick={() => setNavbarOpen(false)}
                 className="hover:cursor-pointer"
@@ -151,6 +151,7 @@ const Header: React.FC = () => {
             {headerLink.map((item, index) => (
               <MobileHeaderLink key={index} item={item} />
             ))}
+            <LanguageSwitcher />
           </nav>
         </div>
       </div>
