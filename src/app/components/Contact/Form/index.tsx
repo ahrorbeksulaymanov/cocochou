@@ -105,7 +105,7 @@ const ContactForm = () => {
                   className='w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
                 />
               </div>
-              <div className='mx-0 my-2.5 flex-1'>
+              {/* <div className='mx-0 my-2.5 flex-1'>
                 <label htmlFor='email' className='pb-3 inline-block text-base'>
                   {t('reservation.email')}
                 </label>
@@ -118,7 +118,7 @@ const ContactForm = () => {
                   placeholder='john.doe@example.com'
                   className='w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0'
                 />
-              </div>
+              </div> */}
               <div className='mx-0 my-2.5 flex-1'>
                 <label
                   htmlFor='Phnumber'
@@ -137,7 +137,7 @@ const ContactForm = () => {
               </div>
             </div>
             <div className='sm:flex gap-6 w-full'>              
-              <div className='mx-0 my-2.5 flex-1'>
+              {/* <div className='mx-0 my-2.5 flex-1'>
                 <label htmlFor='outlet' className='pb-3 inline-block text-base'>
                   {t('reservation.outlet')}
                 </label>
@@ -150,7 +150,7 @@ const ContactForm = () => {
                   <option value=''>{t('reservation.outlet.placeholder')}</option>
                   <option value='Tashkent Main'>{t('reservation.outlet.tashkent')}</option>
                 </select>
-              </div>
+              </div> */}
               <div className='mx-0 my-2.5 flex-1'>
                 <label htmlFor='time' className='pb-3 inline-block text-base'>
                   {t('reservation.time')}

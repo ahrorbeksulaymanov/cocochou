@@ -1,0 +1,69 @@
+{
+  "name": "Cafe Cocochou - Korean Cafe in Tashkent",
+  "short_name": "Cafe Cocochou",
+  "description": "Premium coffee and dessert cafe with Korean culture in Tashkent",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FED000",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["food", "lifestyle", "business"],
+  "icons": [
+    {
+      "src": "/images/Logo/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/Logo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/Logo/logo.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "apple-touch-icon"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/hero/banner-image.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Cafe Cocochou Interior"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Menu",
+      "short_name": "Menu",
+      "description": "View our coffee and dessert menu",
+      "url": "/#menu",
+      "icons": [
+        {
+          "src": "/images/Logo/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Reservation",
+      "short_name": "Reserve",
+      "description": "Make a table reservation",
+      "url": "/#reserve",
+      "icons": [
+        {
+          "src": "/images/Logo/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
