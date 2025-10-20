@@ -1,31 +1,37 @@
 'use client'
 import Image from 'next/image'
 import Masonry from 'react-masonry-css'
-import { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import { GalleryImagesType } from '@/app/types/galleryimage'
 import { useLanguage } from '@/contexts/LanguageContext'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+
+// Static data for build time - lightweight version
+const getGalleryData = () => {
+  return [
+    { src: '/images/Gallery/food1.png', name: 'Photo by cocochou.uz', price: 45000 },
+    { src: '/images/Gallery/food2.png', name: 'Photo by cocochou.uz', price: 55000 },
+    { src: '/images/Gallery/food3.jpg', name: 'Photo by cocochou.uz', price: 65000 },
+    { src: '/images/Gallery/food4.jpg', name: 'Photo by cocochou.uz', price: 40000 },
+    { src: '/images/Gallery/food5.jpg', name: 'Photo by cocochou.uz', price: 42000 },
+    { src: '/images/Gallery/food6.jpg', name: 'Photo by cocochou.uz', price: 22000 },
+    { src: '/images/Gallery/food7.jpg', name: 'Photo by cocochou.uz', price: 38000 },
+    { src: '/images/Gallery/food8.jpg', name: 'Photo by cocochou.uz', price: 22000 },
+    { src: '/images/Gallery/food9.jpg', name: 'Photo by cocochou.uz', price: 22000 },
+    { src: '/images/Gallery/food10.jpg', name: 'Photo by cocochou.uz', price: 22000 },
+    { src: '/images/Gallery/food11.jpg', name: 'Photo by cocochou.uz', price: 22000 },
+    { src: '/images/Gallery/food12.jpg', name: 'Photo by cocochou.uz', price: 22000 },
+  ] as GalleryImagesType[]
+}
 
 const GalleryPage = () => {
   const [galleryImages, setGalleryImages] = useState<GalleryImagesType[]>([])
-  const [loading, setLoading] = useState(true)
   const { t } = useLanguage()
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/data')
-        if (!res.ok) throw new Error('Failed to fetch')
-        const data = await res.json()
-        setGalleryImages(data.GalleryImagesData)
-      } catch (error) {
-        console.error('Error fetching gallery:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData()
+    // Load static data immediately for fast rendering
+    setGalleryImages(getGalleryData())
   }, [])
 
   return (
@@ -50,45 +56,37 @@ const GalleryPage = () => {
 
       {/* Gallery Content */}
       <div className='container py-12'>
-        {loading ? (
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className='bg-gray-200 animate-pulse rounded-2xl h-64'></div>
-            ))}
-          </div>
-        ) : (
-          <Masonry
-            breakpointCols={{ default: 4, 1200: 3, 800: 2, 500: 1 }}
-            className='flex gap-6'
-            columnClassName='masonry-column'>
-            {galleryImages.map((item, index) => {
-              // Random height for Instagram-style layout
-              const heights = [200, 250, 300, 350, 400, 280, 320, 240, 260, 380, 220, 360]
-              const randomHeight = heights[index % heights.length]
-              
-              return (
-                <div
-                  key={index}
-                  className='overflow-hidden rounded-2xl mb-6 relative group cursor-pointer'
-                  style={{ height: randomHeight }}>
-                  <Image
-                    src={item.src}
-                    alt={item.name}
-                    fill
-                    className='object-cover hover:scale-105 transition-transform duration-300'
-                  />
-                  <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
-                    <div className='text-white text-center'>
-                      <Icon icon='mdi:magnify-plus' className='text-4xl mx-auto mb-3' />
-                      <p className='text-lg font-medium'>{item.name}</p>
-                      <p className='text-sm opacity-80'>{item.price} so'm</p>
-                    </div>
+        <Masonry
+          breakpointCols={{ default: 4, 1200: 3, 800: 2, 500: 1 }}
+          className='flex gap-6'
+          columnClassName='masonry-column'>
+          {galleryImages.map((item, index) => {
+            // Random height for Instagram-style layout
+            const heights = [200, 250, 300, 350, 400, 280, 320, 240, 260, 380, 220, 360]
+            const randomHeight = heights[index % heights.length]
+            
+            return (
+              <div
+                key={index}
+                className='overflow-hidden rounded-2xl mb-6 relative group cursor-pointer'
+                style={{ height: randomHeight }}>
+                <Image
+                  src={item.src}
+                  alt={item.name}
+                  fill
+                  className='object-cover hover:scale-105 transition-transform duration-300'
+                />
+                <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
+                  <div className='text-white text-center'>
+                    <Icon icon='mdi:magnify-plus' className='text-4xl mx-auto mb-3' />
+                    <p className='text-lg font-medium'>{item.name}</p>
+                    <p className='text-sm opacity-80'>{item.price} so'm</p>
                   </div>
                 </div>
-              )
-            })}
-          </Masonry>
-        )}
+              </div>
+            )
+          })}
+        </Masonry>
       </div>
     </div>
   )
