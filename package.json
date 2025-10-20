@@ -15,7 +15,6 @@
     "axios": "^1.7.2",
     "date-fns": "^3.4.0",
     "flag-icons": "^7.5.0",
-    "framer-motion": "^11.11.9",
     "gray-matter": "^4.0.3",
     "next": "^15.2.4",
     "next-auth": "^4.24.7",
