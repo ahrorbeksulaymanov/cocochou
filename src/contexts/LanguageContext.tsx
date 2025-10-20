@@ -145,6 +145,12 @@ const translations = {
     'gallery.table.description': 'Description',
     'gallery.table.price': 'Price',
     
+    // Interior
+    'interior.badge': 'Our Interior',
+    'interior.title': 'Experience Our Cafe Atmosphere',
+    'interior.subtitle': 'Take a virtual tour of our beautiful cafe interior and watch our team in action',
+    'interior.followInstagram': 'Follow us on Instagram',
+    
     // Chefs/Team
     'team.badge': 'Our Team',
     'team.title': 'Meet the People Behind Cocochou',
@@ -327,6 +333,12 @@ const translations = {
     'gallery.table.description': 'Tavsif',
     'gallery.table.price': 'Narx',
     
+    // Interior
+    'interior.badge': 'Bizning Interer',
+    'interior.title': 'Bizning Kafe Muhitimizni Tajriba Qiling',
+    'interior.subtitle': 'Bizning go\'zal kafe intererimizni virtual sayohat qiling va jamoamizning ishini kuzating',
+    'interior.followInstagram': 'Instagramda kuzating',
+    
     // Chefs/Team
     'team.badge': 'Bizning Jamoa',
     'team.title': 'Cocochou Ortidagi Odamlar bilan Tanishing',
@@ -484,6 +496,12 @@ const translations = {
     'gallery.table.description': 'Описание',
     'gallery.table.price': 'Цена',
     
+    // Interior
+    'interior.badge': 'Наш интерьер',
+    'interior.title': 'Познакомьтесь с атмосферой нашего кафе',
+    'interior.subtitle': 'Совершите виртуальный тур по нашему красивому интерьеру кафе и посмотрите на работу нашей команды',
+    'interior.followInstagram': 'Подписывайтесь на Instagram',
+    
     // Chefs/Team
     'team.badge': 'Наша команда',
     'team.title': 'Познакомьтесь с людьми за Cocochou',
@@ -640,6 +658,12 @@ const translations = {
     'gallery.table.dish': '요리',
     'gallery.table.description': '설명',
     'gallery.table.price': '가격',
+    
+    // Interior
+    'interior.badge': '우리의 인테리어',
+    'interior.title': '우리 카페 분위기를 경험하세요',
+    'interior.subtitle': '아름다운 카페 인테리어의 가상 투어를 하고 우리 팀의 작업을 지켜보세요',
+    'interior.followInstagram': '인스타그램 팔로우',
     
     // Chefs/Team
     'team.badge': '팀',

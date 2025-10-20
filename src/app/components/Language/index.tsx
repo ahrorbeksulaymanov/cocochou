@@ -5,10 +5,10 @@ import { useLanguage, Language } from '@/contexts/LanguageContext'
 import { Icon } from '@iconify/react/dist/iconify.js'
 
 const languages = [
-  { code: 'ru' as Language, name: 'Русский', display: 'RU', icon: <span className="fi fi-ru inline-block w-6 shrink-0"></span> },
-  { code: 'ko' as Language, name: '한국어', display: 'KO', icon: <span className="fi fi-kr inline-block w-6 shrink-0"></span> },
-  { code: 'en' as Language, name: 'English', display: 'EN', icon: <span className="fi fi-us inline-block w-6 shrink-0"></span> },
-  { code: 'uz' as Language, name: "O'zbekcha", display: 'UZ', icon: <span className="fi fi-uz inline-block w-6 shrink-0"></span> },
+  { code: 'ru' as Language, name: 'Русский', display: 'Ру', icon: <span className="fi fi-ru inline-block w-6 shrink-0"></span> },
+  { code: 'ko' as Language, name: '한국어', display: 'Kr', icon: <span className="fi fi-kr inline-block w-6 shrink-0"></span> },
+  { code: 'en' as Language, name: 'English', display: 'En', icon: <span className="fi fi-us inline-block w-6 shrink-0"></span> },
+  { code: 'uz' as Language, name: "O'zbekcha", display: 'Uz', icon: <span className="fi fi-uz inline-block w-6 shrink-0"></span> },
 ]
 
 export default function LanguageSwitcher() {

@@ -8,6 +8,8 @@ import Menu from '@/app/components/Home/Menu'
 import Newsletter from '@/app/components/Home/Newsletter'
 import { Metadata } from 'next'
 import ContactForm from './components/Contact/Form'
+import Interior from '@/app/components/Home/Interior'
+
 export const metadata: Metadata = {
   title: 'Cafe Cocochou - Korean Brunch Cafe in Tashkent',
   description: 'Experience the best Korean brunch in Tashkent at Cafe Cocochou. Artisan coffee, fresh bingsu, hearty poke bowls, and cozy Korean vibes.',
@@ -22,6 +24,7 @@ export default function Home() {
       <Expert />
       <Menu />
       <Gallery />
+      {/* <Interior /> */}
       {/* <Newsletter /> */}
       <ContactForm />
     </main>
