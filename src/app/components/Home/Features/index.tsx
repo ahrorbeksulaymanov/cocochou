@@ -1,39 +1,25 @@
 'use client'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 import { FeaturesType } from '@/app/types/features'
 import FeaturesSkeleton from '../../Skeleton/Features'
 import { useLanguage } from '@/contexts/LanguageContext'
 
-const Features = () => {
-  const [features, setFeatures] = useState<FeaturesType[]>([])
-  const [loading, setLoading] = useState(true)
+interface FeaturesProps {
+  features: FeaturesType[]
+  loading: boolean
+}
+
+const Features = ({ features, loading }: FeaturesProps) => {
   const { t } = useLanguage()
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-      const res = await fetch('/api/data')
-        if (!res.ok) throw new Error('Failed to fetch')
-        const data = await res.json()
-        setFeatures(data.FeaturesData)
-      } catch (error) {
-        console.error('Error fetching services:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData()
-  }, [])
-
   return (
-    <section id='features'>
+    <section id='features' data-aos='fade-up' data-aos-offset='80'>
       <div className='container'>
         <div className='text-center mb-14'>
-          <p className='text-primary text-lg font-normal tracking-widest uppercase'>
+          <p className='text-primary text-lg font-normal tracking-widest uppercase' data-aos='fade-down' data-aos-delay='0'>
             {t('features.badge')}
           </p>
-          <h2 className='font-semibold lg:max-w-60% mx-auto mt-3'>
+          <h2 className='font-semibold lg:max-w-60% mx-auto mt-3' data-aos='zoom-in' data-aos-delay='80'>
             {t('features.title')}
           </h2>
         </div>
@@ -46,6 +32,8 @@ const Features = () => {
                 <div
                   key={i}
                   className='p-8 rounded-3xl bg-linear-to-b from-primary/10 to-white shadow-md hover:scale-105 transition duration-300 ease-in-out hover:cursor-pointer'
+                  data-aos='fade-up'
+                  data-aos-delay={`${(i % 4) * 100}`}
                 >
                   <div className='relative top-3'>
                     <div 

@@ -1,6 +1,6 @@
 'use client'
 import Slider from 'react-slick'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -8,26 +8,13 @@ import { ExpertChiefType } from '@/app/types/expertchief'
 import ChiefDetailSkeleton from '../../Skeleton/ChiefDetail'
 import { useLanguage } from '@/contexts/LanguageContext'
 
-const Expert = () => {
-  const [chiefDetail, setChiefDetail] = useState<ExpertChiefType[]>([])
-  const [loading, setLoading] = useState(true)
-  const { t } = useLanguage()
+interface ExpertProps {
+  expertChief: ExpertChiefType[]
+  loading: boolean
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/data')
-        if (!res.ok) throw new Error('Failed to fetch')
-        const data = await res.json()
-        setChiefDetail(data.ExpertChiefData)
-      } catch (error) {
-        console.error('Error fetching services:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData()
-  }, [])
+const Expert = ({ expertChief, loading }: ExpertProps) => {
+  const { t } = useLanguage()
 
   const settings = {
     dots: true,
@@ -74,7 +61,7 @@ const Expert = () => {
             ? Array.from({ length: 3 }).map((_, i) => (
                 <ChiefDetailSkeleton key={i} />
               ))
-            : chiefDetail.map((items, i) => (
+            : expertChief.map((items, i) => (
                 <div key={i}>
                   <div className='m-3 my-10 p-10 text-center backdrop-blur-md bg-white/50 rounded-3xl'>
                     <div className='relative'>

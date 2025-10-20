@@ -4,6 +4,7 @@ import Header from '@/app/components/Layout/Header'
 import Footer from '@/app/components/Layout/Footer'
 import ScrollToTop from '@/app/components/ScrollToTop'
 import { LanguageProvider } from '@/contexts/LanguageContext'
+import AOSProvider from '@/app/providers/AOSProvider'
 import type { Metadata } from 'next'
 import "flag-icons/css/flag-icons.min.css";
 
@@ -222,10 +223,12 @@ export default function RootLayout({
       </head>
       <body className={`${font.className}`}>
         <LanguageProvider>
-          <Header />
-          {children}
-          <Footer />
-          <ScrollToTop />
+          <AOSProvider>
+            <Header />
+            {children}
+            <Footer />
+            <ScrollToTop />
+          </AOSProvider>
         </LanguageProvider>
       </body>
     </html>

@@ -78,15 +78,15 @@ const ContactForm = () => {
       })
   }
   return (
-    <section id='reserve' className='scroll-mt-20'>
+    <section id='reserve' className='scroll-mt-20' data-aos='fade-up' data-aos-delay='100'>
       <div className='container'>
-        <p className='text-primary text-lg font-normal mb-3 tracking-widest uppercase text-center'>
+        <p className='text-primary text-lg font-normal mb-3 tracking-widest uppercase text-center' data-aos='fade-down' data-aos-delay='0'>
           {t('reservation.badge')}
         </p>
-        <h2 className='mb-9 font-bold tracking-tight text-center'>
+        <h2 className='mb-9 font-bold tracking-tight text-center' data-aos='zoom-in' data-aos-delay='60'>
           {t('reservation.title')}
         </h2>
-        <div className='relative border px-6 py-2 rounded-3xl'>
+        <div className='relative border px-6 py-2 rounded-3xl' data-aos='fade-up' data-aos-delay='150'>
           <form
             onSubmit={handleSubmit}
             className='flex flex-wrap w-full m-auto justify-between'>

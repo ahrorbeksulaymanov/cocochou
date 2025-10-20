@@ -2,39 +2,25 @@
 import Image from 'next/image'
 import Masonry from 'react-masonry-css'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import GalleryImagesSkeleton from '../../Skeleton/GalleryImages'
 import { Icon } from '@iconify/react'
 import { GalleryImagesType } from '@/app/types/galleryimage'
 import { FullMenuType } from '@/app/types/fullmenu'
 import { useLanguage } from '@/contexts/LanguageContext'
 
-const Gallery = () => {
-  const [galleryImages, setGalleryImages] = useState<GalleryImagesType[]>([])
-  const [fullMenu, setFullMenu] = useState<FullMenuType[]>([])
-  const [loading, setLoading] = useState(true)
+interface GalleryProps {
+  galleryImages: GalleryImagesType[]
+  fullMenu: FullMenuType[]
+  loading: boolean
+}
+
+const Gallery = ({ galleryImages, fullMenu, loading }: GalleryProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useLanguage()
 
   const openMenu = () => setIsMenuOpen(true)
   const closeMenu = () => setIsMenuOpen(false)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/data')
-        if (!res.ok) throw new Error('Failed to fetch')
-        const data = await res.json()
-        setGalleryImages(data.GalleryImagesData)
-        setFullMenu(data.FullMenuData)
-      } catch (error) {
-        console.error('Error fetching services:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData()
-  }, [])
 
   return (
     <section id='gallery' className='scroll-mt-20'>
