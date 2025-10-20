@@ -37,7 +37,7 @@ const Gallery = ({ galleryImages, fullMenu, loading }: GalleryProps) => {
             className='flex gap-6'
             columnClassName='masonry-column'>
             {/* Map through images */}
-            {loading
+            {loading || !galleryImages
               ? Array.from({ length: 4 }).map((_, i) => (
                   <GalleryImagesSkeleton key={i} />
                 ))

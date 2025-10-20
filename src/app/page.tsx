@@ -84,11 +84,11 @@ export default async function Home() {
   return (
     <main>
       <Hero />
-      <Features features={data.FeaturesData} loading={false} />
+      <Features features={data.FeaturesData || []} loading={false} />
       <Cook />
-      <Expert expertChief={data.ExpertChiefData} loading={false} />
+      <Expert expertChief={data.ExpertChiefData || []} loading={false} />
       <Menu />
-      <Gallery galleryImages={data.GalleryImagesData} fullMenu={data.FullMenuData} loading={false} />
+      <Gallery galleryImages={data.GalleryImagesData || []} fullMenu={data.FullMenuData || []} loading={false} />
       {/* <Interior /> */}
       {/* <Newsletter /> */}
       <ContactForm />

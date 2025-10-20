@@ -60,7 +60,7 @@ const GalleryPage = () => {
           breakpointCols={{ default: 4, 1200: 3, 800: 2, 500: 1 }}
           className='flex gap-6'
           columnClassName='masonry-column'>
-          {galleryImages.map((item, index) => {
+          {galleryImages && galleryImages.map((item, index) => {
             // Random height for Instagram-style layout
             const heights = [200, 250, 300, 350, 400, 280, 320, 240, 260, 380, 220, 360]
             const randomHeight = heights[index % heights.length]

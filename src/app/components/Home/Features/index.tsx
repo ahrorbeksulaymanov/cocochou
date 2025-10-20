@@ -23,12 +23,12 @@ const Features = ({ features, loading }: FeaturesProps) => {
             {t('features.title')}
           </h2>
         </div>
-        <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-y-28 gap-x-6 mt-24'>
-          {loading
-            ? Array.from({ length: 4 }).map((_, i) => (
-              <FeaturesSkeleton key={i} />
-            ))
-            : features.map((items, i) => (
+            <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-y-28 gap-x-6 mt-24'>
+              {loading || !features
+                ? Array.from({ length: 4 }).map((_, i) => (
+                  <FeaturesSkeleton key={i} />
+                ))
+                : features.map((items, i) => (
                 <div
                   key={i}
                   className='p-8 rounded-3xl bg-linear-to-b from-primary/10 to-white shadow-md hover:scale-105 transition duration-300 ease-in-out hover:cursor-pointer'

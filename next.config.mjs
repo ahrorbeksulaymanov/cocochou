@@ -16,8 +16,6 @@ const nextConfig = {
   },
   // Optimize build output
   output: 'standalone',
-  // Reduce bundle size
-  swcMinify: true,
   // Compress static assets
   compress: true,
 }

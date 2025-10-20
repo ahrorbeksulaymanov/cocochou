@@ -30,7 +30,7 @@ const Header: React.FC = () => {
         const res = await fetch('/api/data')
         if (!res.ok) throw new Error('Failed to fetch')
         const data = await res.json()
-        setHeaderLink(data.HeaderData)
+        setHeaderLink(data.HeaderData)        
       } catch (error) {
         console.error('Error fetching services:', error)
       }

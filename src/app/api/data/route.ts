@@ -219,9 +219,11 @@ export const revalidate = 3600 // Revalidate every hour
 export const GET = () => {
   // Return only essential data for client-side hydration
   return NextResponse.json({
+    HeaderData,
     FeaturesData,
     ExpertChiefData,
-    GalleryImagesData: GalleryImagesData.slice(0, 6), // Only first 6 for faster loading
-    FullMenuData: FullMenuData.slice(0, 4), // Only first 4 for faster loading
+    GalleryImagesData,
+    FullMenuData,
+    FooterLinkData,
   })
 }

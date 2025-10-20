@@ -57,7 +57,7 @@ const Expert = ({ expertChief, loading }: ExpertProps) => {
           <h2>{t('team.title')}</h2>
         </div>
         <Slider {...settings}>
-          {loading
+          {loading || !expertChief
             ? Array.from({ length: 3 }).map((_, i) => (
                 <ChiefDetailSkeleton key={i} />
               ))
